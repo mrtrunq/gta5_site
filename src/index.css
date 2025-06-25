@@ -29,7 +29,14 @@
     .card-hover::before {
         @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#ff0080)] opacity-0 transition-opacity duration-200 ease-in-out content-[''];
     }
+    .card-hover-active::before {
+        @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#ff0080)] opacity-100 transition-opacity duration-200 ease-in-out content-[''];
+    }
     .card-hover:hover::before {
         @apply opacity-100;
     }
+}
+
+.card-active .card-element-active {
+    @apply translate-y-0 fill-current saturate-100 duration-200 ease-in-out;
 }
