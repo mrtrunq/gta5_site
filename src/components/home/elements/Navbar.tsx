@@ -1,4 +1,4 @@
-import type { IProps } from "../Header";
+import type { IProps } from "./Header";
 
 export default function Navbar({ navItems }: { navItems: IProps[] }) {
     return (
@@ -7,7 +7,7 @@ export default function Navbar({ navItems }: { navItems: IProps[] }) {
                 {navItems.map((item, index) => (
                     <ul className="">
                         <li>
-                            <a key={index} href={item.href} className="text-primary text-[1.6rem] font-bold uppercase">
+                            <a key={index} href={item.href} className="text-primary-foreground text-[1.6rem] font-bold uppercase hover:text-white">
                                 {item.name}
                             </a>
                         </li>

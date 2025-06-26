@@ -1,19 +1,17 @@
-import HeroSection from "../components/HeroSection/HeroSection";
-import Header from "../components/Header/Header";
-import Footer from "../components/Footer/Footer";
+import IntroSection from "../components/home/sections/IntroSection";
+import QuestSection from "../components/home/sections/QuestSection";
+import ShowCaseSection from "../components/home/sections/ShowCaseSection";
+import HomeLayout from "../layouts/HomeLayout";
 
 export default function Home() {
     return (
         <>
-            <Header />
-            <main>
-                {/* Hero Section */}
-                <HeroSection />
-                {/* Story Section */}
-                {/* Gallery Section */}
-                {/* About Section */}
-            </main>
-            <Footer />
+            <HomeLayout title="GTA Go Việt Nam">
+                <IntroSection />
+                <QuestSection />
+                <ShowCaseSection />
+                {/* Guide Section */}
+            </HomeLayout>
         </>
     );
 }

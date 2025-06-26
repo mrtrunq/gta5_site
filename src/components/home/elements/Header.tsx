@@ -1,4 +1,4 @@
-import Navbar from "./_components/Navbar";
+import Navbar from "./Navbar";
 
 export interface IProps {
     name: string;
@@ -7,17 +7,17 @@ export interface IProps {
 
 const navItems: IProps[] = [
     { name: "vé theo mùa", href: "#" },
+    { name: "discord", href: "https://discord.gg/PanXnKq3fu" },
     { name: "bắt đầu chơi", href: "#" },
     { name: "tải game", href: "#" },
-    { name: "discord", href: "#" },
-    { name: "thông tin", href: "#" },
+    { name: "forum", href: "#" },
 ];
 
 export default function Header() {
     return (
         <>
             <header className="mx-auto flex max-w-[167.8rem] items-center justify-between px-[2.4rem] pt-[4.8rem]">
-                <div className="flex items-center gap-[2.4rem]">
+                <a href="" className="flex items-center gap-[2.4rem]">
                     <svg viewBox="0 0 120 32" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-[12rem]" data-v-d4b91920="">
                         <path d="M37.3123 7.44916C39.5823 7.44916 41.2746 8.27202 42.3752 9.90342L42.8293 7.87476H48.0853L44.3981 24.9979H39.1283L39.541 23.0118C38.1927 24.6148 36.6105 25.4238 34.7945 25.4238C32.8959 25.4238 31.3825 24.7991 30.2543 23.5654C29.1262 22.317 28.5622 20.5865 28.5622 18.3305C28.5604 16.609 28.8828 14.9034 29.5114 13.3085C30.1465 11.6793 31.1798 10.2473 32.5107 9.15186C33.8727 8.0166 35.4687 7.44916 37.3123 7.44916ZM38.234 12.2725C37.0234 12.2725 36.0189 12.7548 35.221 13.7054C34.4231 14.656 34.0375 15.8334 34.0375 17.1953C34.0375 18.2168 34.3543 19.0395 34.973 19.6638C35.5917 20.288 36.3626 20.6 37.2842 20.6C38.4949 20.6 39.5405 20.0609 40.4211 18.997L41.563 13.8189C40.7517 12.7833 39.6511 12.2725 38.234 12.2725Z" fill="white"></path>
                         <path d="M77.7289 25.4235C76.1848 25.4282 74.6521 25.1496 73.2026 24.6007C71.8257 24.1051 70.5649 23.3173 69.5016 22.2882L72.2945 18.7695C72.8861 19.4079 73.7529 20.018 74.8946 20.5857C76.0363 21.1534 77.1371 21.4369 78.2103 21.4369C78.7331 21.4369 79.1596 21.3234 79.4897 21.0822C79.8066 20.841 79.9712 20.5431 79.9712 20.1885C79.9712 19.7204 79.5448 19.2948 78.678 18.9401C77.754 18.5649 76.8073 18.2522 75.8438 18.0038C74.7895 17.7231 73.8169 17.1828 73.0097 16.4291C72.594 16.0619 72.2625 15.6044 72.0389 15.0893C71.8153 14.5742 71.7052 14.0144 71.7164 13.4502C71.7164 11.7903 72.3493 10.3718 73.6288 9.19424C74.9084 8.0167 76.6421 7.42072 78.8433 7.42072C80.2266 7.41757 81.6 7.66238 82.9019 8.14421C84.1394 8.58385 85.2769 9.27896 86.2451 10.1871L83.6999 13.5635C83.2183 13.0244 82.5163 12.5279 81.5948 12.088C80.7354 11.6642 79.7959 11.4413 78.8432 11.4355C78.2654 11.4355 77.8114 11.5489 77.4812 11.7901C77.151 12.0313 76.9859 12.315 76.9859 12.6413C76.9859 12.9677 77.2748 13.266 77.8526 13.5067C78.528 13.7971 79.2222 14.0389 79.9301 14.2302C80.7546 14.4752 81.5633 14.7737 82.3514 15.1239C83.1479 15.4774 83.8543 16.0164 84.4151 16.6986C84.9929 17.3937 85.2818 18.2449 85.2818 19.238C85.2818 21.0113 84.5939 22.4866 83.2316 23.65C81.8563 24.8418 80.0266 25.4235 77.7289 25.4235Z" fill="white"></path>
@@ -36,11 +36,11 @@ export default function Header() {
                         </defs>
                     </svg>
                     <div className="flex rounded-[0.8rem] bg-[linear-gradient(180deg,_#272727,_#1d1d1d)] p-[1rem] text-[1.4rem] font-bold">
-                        <svg data-v-49701d8c="" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary">
+                        <svg data-v-49701d8c="" width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-primary-foreground">
                             <path d="M6.8994 8C8.37007 8 9.56607 6.804 9.56607 5.33334C9.56607 3.86267 8.37007 2.66667 6.8994 2.66667C5.42873 2.66667 4.23273 3.86267 4.23273 5.33334C4.23273 6.804 5.42873 8 6.8994 8ZM7.8994 8.66667H5.8994C3.6934 8.66667 1.8994 10.4607 1.8994 12.6667V13.3333H11.8994V12.6667C11.8994 10.4607 10.1054 8.66667 7.8994 8.66667Z" fill="currentColor"></path>
                             <path d="M11.6354 7.36533C12.0414 6.67339 12.2168 5.8702 12.1361 5.072C12.0167 3.88267 11.3527 2.83133 10.2674 2.112L9.53073 3.22267C10.2767 3.71733 10.7307 4.422 10.8094 5.20533C10.8457 5.5694 10.8003 5.93697 10.6767 6.28132C10.5531 6.62567 10.3543 6.93814 10.0947 7.196L9.30006 7.99067L10.3787 8.30733C13.2001 9.134 13.2327 11.9713 13.2327 12H14.5661C14.5661 10.8073 13.9287 8.47667 11.6354 7.36533Z" fill="currentColor"></path>
                         </svg>
-                        <span className="text-primary mr-[0.8rem] ml-[0.4rem] uppercase">online:</span>
+                        <span className="text-primary-foreground mr-[0.8rem] ml-[0.4rem] uppercase">online:</span>
                         <span className="text-white">
                             <span className="text-[1.6rem]">1</span>
                             <span className="text-[1.6rem]">&nbsp;</span>
@@ -49,13 +49,11 @@ export default function Header() {
                             <span className="text-[1.6rem]">0</span>
                         </span>
                     </div>
-                </div>
+                </a>
                 <Navbar navItems={navItems} />
-                <div>
-                    <a href="" className="rounded-[0.8rem] bg-[#D5375C] px-[2rem] py-[1.6rem] text-[1.6rem] font-bold text-white">
-                        DONATE
-                    </a>
-                </div>
+                <a href="" className="bg-primary inline-block rounded-[0.8rem] px-[2rem] py-[1.6rem] text-[1.6rem] font-bold text-white hover:shadow-[0_0_16px_#e81c5abf]">
+                    DONATE
+                </a>
             </header>
         </>
     );

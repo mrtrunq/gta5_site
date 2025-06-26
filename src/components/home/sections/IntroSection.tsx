@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-export default function IntroContainer() {
+export default function IntroSection() {
     const [hover, setHover] = useState(false);
 
     return (
         <>
-            <div className="mx-auto mt-[7rem] flex h-[86rem] max-w-[164.5rem]">
-                <div className={`absolute inset-0 -z-10 h-full w-full bg-[url('/images/intro/backs/intro.webp')] bg-cover bg-bottom opacity-80 duration-200 ease-in-out ${!hover && "brightness-30 saturate-0"}`}></div>
+            <section className="mx-auto mt-[6rem] flex h-[70.4rem] max-w-[164.5rem]">
+                <div className={`absolute inset-0 -z-10 h-[86rem] w-full bg-[url('/images/intro/backs/intro.webp')] bg-cover bg-bottom opacity-80 duration-200 ease-in-out ${!hover && "brightness-30 saturate-0"}`}></div>
                 <div className="flex h-[60rem] w-full gap-[1.6rem]">
                     <div className={`card-hover is-hover group ${hover && "card-active card-hover-active"} relative flex h-full w-full overflow-hidden rounded-[1.6rem]`}>
                         <img src="/images/intro/activities/backs/police.webp" alt="" className="card-element-active absolute bottom-0 left-0 h-full w-full object-cover saturate-0 group-hover:saturate-100" />
@@ -102,7 +102,7 @@ export default function IntroContainer() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         </>
     );
 }

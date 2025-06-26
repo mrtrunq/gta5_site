@@ -9,17 +9,32 @@
 @import "@fontsource/roboto/800.css";
 @import "@fontsource/roboto/900.css";
 
-@layer base {
-    html {
-        font-size: 62.5%;
-        line-height: 1.6rem;
-        font-family: "Roboto", sans-serif;
-        @apply bg-gray-950;
-    }
+/* Tailwind */
+@theme {
+    --color-corner: var(--corner);
+    --color-primary: var(--primary);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --color-primary-foreground: var(--primary-foreground);
 }
 
-@theme {
-    --color-primary: #c4c4c4;
+@layer base {
+    :root {
+        --corner: #323232;
+        --primary: #d5375c;
+        --foreground: #fff;
+        --background: #0e0e0e;
+        --primary-foreground: #c4c4c4;
+    }
+
+    html {
+        font-family: "Roboto", sans-serif;
+        @apply bg-background text-foreground scroll-smooth text-[62.5%] leading-[1.6rem];
+    }
+
+    ::selection {
+        @apply bg-primary;
+    }
 }
 
 @layer components {
@@ -35,6 +50,11 @@
     .card-hover:hover::before {
         @apply opacity-100;
     }
+}
+
+/* CSS */
+#root {
+    @apply text-center;
 }
 
 .card-active .card-element-active {
