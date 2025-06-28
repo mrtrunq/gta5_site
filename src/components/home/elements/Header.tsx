@@ -11,6 +11,7 @@ const navItems: IProps[] = [
     { name: "bắt đầu chơi", href: "#" },
     { name: "tải game", href: "#" },
     { name: "forum", href: "#" },
+    { name: "thông tin", href: "#show-case" },
 ];
 
 export default function Header() {

@@ -1,64 +1,49 @@
 import { useState } from "react";
+import type { IArticlesProps } from "../../../pages/Home";
 
-const cardImages = ["/images/show_case/card/your-way.webp", "/images/show_case/card/cars-clothes-every-taste.webp", "/images/show_case/card/lots-of-entertainment.webp"];
-const articles = [
-    {
-        title: "QUYỀN LỰC CỦA BẠN",
-        content: "Trong trò chơi nhập vai GTA Go năng động này, bạn có quyền lựa chọn: lãnh đạo một băng đảng khét tiếng hoặc lật ngược kịch bản và tham gia lực lượng để trở thành người bảo vệ công lý. Vượt qua ranh giới mong manh giữa tội phạm và luật pháp, nơi mọi quyết định có thể đẩy bạn vào cuộc sống giao dịch ngầm hoặc vào hàng ngũ những người dũng cảm nhất của thành phố. Bạn sẽ cai trị đường phố hay bảo vệ chúng?",
-    },
-    {
-        title: "XE VÀ QUẦN ÁO PHÙ HỢP VỚI MỌI SỞ THÍCH",
-        content: "Trải nghiệm cảm giác hồi hộp khi tùy chỉnh vô tận trong máy chủ GTA 5 của chúng tôi. Lựa chọn từ một đội xe đa dạng, từ siêu xe bóng bẩy đến xe tải nhỏ tiện dụng. Cá nhân hóa nhân vật của bạn với nhiều lựa chọn quần áo, từ thời trang dạo phố hợp thời trang đến các thương hiệu xa xỉ độc quyền. Hãy tạo nên tuyên bố và nổi bật giữa những người chơi với phong cách độc đáo của bạn!",
-    },
-    {
-        title: "CẢM GIÁC VÀ MẠO HIỂM",
-        content: "Tham gia vào vô số hoạt động trên GTA Go Việt Nam. Vươn lên thành công bằng cách điều hành doanh nghiệp vận tải của riêng bạn hoặc lặn vào thế giới GTA để tạo ra thu nhập thụ động. Nhưng không chỉ là kiếm tiền; mà là vượt qua đối thủ cạnh tranh và kiểm soát lãnh địa của bạn. Hãy để mắt đến các đối thủ và quản lý tài sản của bạn một cách cẩn thận để trở thành một ông trùm thực thụ trong trò chơi.",
-    },
-];
-const images = ["/images/show_case/photos_email/photo1.webp", "/images/show_case/photos_email/photo2.webp", "/images/show_case/photos_email/photo3.webp", "/images/show_case/photos_email/photo4.webp", "/images/show_case/photos_email/photo5.webp", "/images/show_case/photos_email/photo6.webp", "/images/show_case/photos_email/photo7.webp"];
-
-export default function ShowCaseSection() {
-    const [toggleState, setToggleState] = useState(0);
-    const handleToggleTabLeft = () => {
-        if (toggleState < 3 && toggleState > 0) {
-            setToggleState(toggleState - 1);
+export default function ShowCaseSection({ setOpen, images, articles, slides }: { setOpen: any; images: string[]; articles: IArticlesProps[]; slides: string[] }) {
+    const [toggleTab, setToggleTab] = useState(0);
+    const handlePrevTab = () => {
+        if (toggleTab < images.length && toggleTab > 0) {
+            setToggleTab(toggleTab - 1);
         }
     };
-    const handleToggleTabRight = () => {
-        if (toggleState < 2) {
-            setToggleState(toggleState + 1);
+    const handleNextTab = () => {
+        if (toggleTab < images.length - 1) {
+            setToggleTab(toggleTab + 1);
         }
     };
 
     return (
         <>
-            <section className="mx-auto mb-[2.7rem] flex max-w-[167.8rem] items-center justify-between px-[2.4rem]">
+            <section id="show-case" className="mx-auto mb-[2.7rem] flex max-w-[167.8rem] items-center justify-between px-[2.4rem]">
                 <article className="text-foreground relative h-[48.2rem] w-[78.3rem]">
                     <div className="absolute right-0 left-0 flex h-full w-full items-center justify-between object-contain">
-                        <button type="button" className={`border-corner group flex aspect-square w-[5.6rem] items-center justify-center rounded-full border ${toggleState !== 0 && "hover:border-primary cursor-pointer duration-200 hover:shadow-[0_0_32px_#e81c5a80]"}`} onClick={handleToggleTabLeft}>
-                            <svg data-v-745adced="" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${toggleState !== 0 && "group-hover:fill-foreground duration-200"} h-[60%] w-[60%] fill-[#ffffff80] duration-200`}>
+                        <button type="button" className={`border-corner group flex aspect-square w-[5.6rem] items-center justify-center rounded-full border ${toggleTab !== 0 && "hover:border-primary cursor-pointer duration-200 hover:shadow-[0_0_32px_#e81c5a80]"}`} onClick={handlePrevTab}>
+                            <svg data-v-745adced="" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${toggleTab !== 0 && "group-hover:fill-foreground duration-200"} h-[60%] w-[60%] fill-[#ffffff80] duration-200`}>
                                 <path d="M19.0605 25.9395L12.621 19.5H27V16.5H12.621L19.0605 10.0605L16.9395 7.93945L6.879 18L16.9395 28.0605L19.0605 25.9395Z"></path>
                             </svg>
                         </button>
-                        <button type="button" className={`border-corner group flex aspect-square w-[5.6rem] items-center justify-center rounded-full border ${toggleState !== 2 && "hover:border-primary cursor-pointer duration-200 hover:shadow-[0_0_32px_#e81c5a80]"}`} onClick={handleToggleTabRight}>
-                            <svg data-v-745adced="" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${toggleState !== 2 && "group-hover:fill-foreground duration-200"} h-[60%] w-[60%] rotate-180 fill-[#ffffff80] duration-200`}>
+                        <button type="button" className={`border-corner group flex aspect-square w-[5.6rem] items-center justify-center rounded-full border ${toggleTab !== 2 && "hover:border-primary cursor-pointer duration-200 hover:shadow-[0_0_32px_#e81c5a80]"}`} onClick={handleNextTab}>
+                            <svg data-v-745adced="" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" className={`${toggleTab !== 2 && "group-hover:fill-foreground duration-200"} h-[60%] w-[60%] rotate-180 fill-[#ffffff80] duration-200`}>
                                 <path d="M19.0605 25.9395L12.621 19.5H27V16.5H12.621L19.0605 10.0605L16.9395 7.93945L6.879 18L16.9395 28.0605L19.0605 25.9395Z"></path>
                             </svg>
                         </button>
                     </div>
-                    {cardImages.map((image, index) => (
-                        <img key={index} src={image} alt="" className={`${toggleState !== index && "hidden"} h-full w-full object-contain`} />
-                    ))}
-                    {articles.map((article, index) => (
-                        <div key={index} className={`${toggleState !== index && "hidden"} absolute bottom-0 left-0 text-left`}>
-                            <h1 className="mb-[1.4rem] text-[2.4rem] font-bold">{article.title}</h1>
-                            <p className="text-[1.6rem] leading-[2.2rem]">{article.content}</p>
-                        </div>
-                    ))}
+                    {images.map((image, index) => toggleTab === index && <img key={index} src={image} alt="" className="h-full w-full object-contain" />)}
+                    {articles.map(
+                        (article, index) =>
+                            toggleTab === index && (
+                                <div key={index} className="absolute bottom-0 left-0 text-left">
+                                    <h1 className="mb-[1.4rem] text-[2.4rem] font-bold">{article.title}</h1>
+                                    <p className="text-[1.6rem] leading-[2.2rem]">{article.content}</p>
+                                </div>
+                            ),
+                    )}
                 </article>
                 <article className="flex h-[54.2rem] w-[78.3rem] flex-col gap-[2rem]">
                     <a href="https://www.youtube.com/watch?v=YNNATj2jsfM" className="relative h-[27rem] w-full">
-                        <img src="public/images/show_case/cover.jpg" alt="" className="border-corner absolute right-0 left-0 h-full w-full rounded-2xl border object-cover" />
+                        <img src={`${import.meta.env.BASE_URL}/images/show_case/cover.jpg `} alt="" className="border-corner absolute right-0 left-0 h-full w-full rounded-2xl border object-cover" />
                         <div className="group absolute flex h-full w-full items-center justify-center gap-[3rem] bg-[#00000059]">
                             <div className="card-element-active card-element-active w-[6.4rem] rounded-full duration-200 group-hover:scale-[1.1] group-hover:shadow-[0_0_64px_#fff]">
                                 <svg viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-full w-full fill-white">
@@ -69,13 +54,17 @@ export default function ShowCaseSection() {
                         </div>
                     </a>
                     <div className="grid grid-cols-4 gap-[1.6rem]">
-                        {images.map((image, index) => (
-                            <div className="border-corner h-[9.2rem] rounded-xl border-[0.5px] transition-transform duration-200 ease-in-out hover:-translate-y-1">
-                                <img key={index} src={image} alt="" className="h-full w-full rounded-xl" />
-                            </div>
-                        ))}
-                        <div className="border-corner relative h-[9.2rem] rounded-xl border-[0.5px] transition-transform duration-200 ease-in-out hover:-translate-y-1">
-                            <img src="/images/show_case/photos_email/photo8.webp" alt="" className="h-full w-full rounded-xl opacity-10 saturate-0" />
+                        {slides.map((image, index) => {
+                            if (index < 7) {
+                                return (
+                                    <div className="border-corner h-[9.2rem] cursor-pointer rounded-xl border-[0.5px] transition-transform duration-200 ease-in-out hover:-translate-y-1">
+                                        <img key={index} src={image} alt="" className="h-full w-full rounded-xl" />
+                                    </div>
+                                );
+                            }
+                        })}
+                        <div className="border-corner relative h-[9.2rem] cursor-pointer rounded-xl border-[0.5px] transition-transform duration-200 ease-in-out hover:-translate-y-1" onClick={() => setOpen(true)}>
+                            <img src={`${import.meta.env.BASE_URL}/images/show_case/photos_email/photo8.webp `} alt="" className="h-full w-full rounded-xl opacity-10 saturate-0" />
                             <div className="absolute top-0 left-0 flex h-full w-full items-center justify-center gap-[2rem]">
                                 <div className="w-[5.6rem] text-right text-[1.4rem] leading-[2.1rem] font-bold text-[#d7d7d7] uppercase">more photos</div>
                                 <svg className="h-[2.1rem] w-[1.3rem] fill-[#d7d7d7]" data-v-745adced="" viewBox="0 0 13 21" fill="none" xmlns="http://www.w3.org/2000/svg">

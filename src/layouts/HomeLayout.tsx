@@ -16,8 +16,7 @@ export default function HomeLayout({ title, children }: ILayoutProps) {
         <>
             <Header />
             <main>{children}</main>
-            {/* Modal */}
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }

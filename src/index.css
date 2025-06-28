@@ -16,20 +16,22 @@
     --color-foreground: var(--foreground);
     --color-background: var(--background);
     --color-primary-foreground: var(--primary-foreground);
+    --color-secondary-foreground: var(--secondary-foreground);
 }
 
 @layer base {
     :root {
         --corner: #323232;
-        --primary: #d5375c;
+        --primary: #e81c5a;
         --foreground: #fff;
         --background: #0e0e0e;
         --primary-foreground: #c4c4c4;
+        --secondary-foreground: rgba(255, 255, 255, 0.75);
     }
 
     html {
         font-family: "Roboto", sans-serif;
-        @apply bg-background text-foreground scroll-smooth text-[62.5%] leading-[1.6rem];
+        @apply bg-background text-foreground overflow-scroll scroll-smooth text-[62.5%] leading-[1.6rem];
     }
 
     ::selection {
@@ -38,14 +40,17 @@
 }
 
 @layer components {
+    .indicator-pseudo::before {
+        @apply absolute top-[calc(50%+0.3rem)] right-[calc(50%+7.4rem)] aspect-square h-[0.8rem] rounded-full bg-[#89de5d] content-[""];
+    }
     .card-pseudo::before {
-        @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#e81c5a)] opacity-100 transition-opacity duration-200 ease-in-out content-[''];
+        @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#e81c5a)] opacity-100 transition-opacity duration-200 ease-in-out content-[""];
     }
     .card-hover::before {
-        @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#ff0080)] opacity-0 transition-opacity duration-200 ease-in-out content-[''];
+        @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#ff0080)] opacity-0 transition-opacity duration-200 ease-in-out content-[""];
     }
     .card-hover-active::before {
-        @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#ff0080)] opacity-100 transition-opacity duration-200 ease-in-out content-[''];
+        @apply absolute top-0 left-0 z-10 h-full w-full bg-[linear-gradient(180deg,_#fa248f1f,_#ff0080)] opacity-100 transition-opacity duration-200 ease-in-out content-[""];
     }
     .card-hover:hover::before {
         @apply opacity-100;
@@ -54,7 +59,7 @@
 
 /* CSS */
 #root {
-    @apply text-center;
+    @apply text-[1.6rem];
 }
 
 .card-active .card-element-active {

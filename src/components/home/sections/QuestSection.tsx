@@ -7,11 +7,11 @@ export default function QuestSection() {
     return (
         <>
             <section className="relative z-0 mb-[2.4rem] flex min-h-[59.5rem] w-full flex-col items-center justify-start overflow-hidden pt-[6.1rem] pb-[5.4rem]">
-                <img src="/images/quest_starter/particles.webp" alt="" className="absolute top-[-5.2rem] right-[7.5%] left-[7.5%] z-10 mx-auto w-[85%] max-w-[163rem] object-contain" />
-                <img src="/images/quest_starter/left-palms.webp" alt="" className="absolute top-[-17rem] left-0 h-[73.1rem] object-contain" />
-                <img src="/images/quest_starter/right-palms.webp" alt="" className="absolute top-[-17rem] right-0 h-[73.1rem] object-contain" />
-                <img src="/images/quest_starter/gang.webp" alt="" className={`absolute top-0 left-[12rem] z-10 h-[62.3rem] w-[53.6rem] object-contain saturate-0 transition duration-200 ${hoverLeft && "saturate-100 transition duration-200 ease-in-out"} ease-in-out`} />
-                <img src="/images/quest_starter/cop.webp" alt="" className={`absolute top-0 right-[12rem] z-10 h-[62.3rem] w-[53.6rem] object-contain saturate-0 transition duration-200 ${hoverRight && "saturate-100 transition duration-200 ease-in-out"} ease-in-out`} />
+                <img src={`${import.meta.env.BASE_URL}/images/quest_starter/particles.webp `} alt="" className="absolute top-[-5.2rem] right-[7.5%] left-[7.5%] z-10 mx-auto w-[85%] max-w-[163rem] object-contain" />
+                <img src={`${import.meta.env.BASE_URL}/images/quest_starter/left-palms.webp `} alt="" className="absolute top-[-17rem] left-0 h-[73.1rem] object-contain" />
+                <img src={`${import.meta.env.BASE_URL}/images/quest_starter/right-palms.webp `} alt="" className="absolute top-[-17rem] right-0 h-[73.1rem] object-contain" />
+                <img src={`${import.meta.env.BASE_URL}/images/quest_starter/gang.webp `} alt="" className={`absolute top-0 left-[12rem] z-10 h-[62.3rem] w-[53.6rem] object-contain saturate-0 transition duration-200 ${hoverLeft && "saturate-100 transition duration-200 ease-in-out"} ease-in-out`} />
+                <img src={`${import.meta.env.BASE_URL}/images/quest_starter/cop.webp `} alt="" className={`absolute top-0 right-[12rem] z-10 h-[62.3rem] w-[53.6rem] object-contain saturate-0 transition duration-200 ${hoverRight && "saturate-100 transition duration-200 ease-in-out"} ease-in-out`} />
                 <a href="" className="absolute top-0 left-0 z-20 h-full w-[50%] cursor-pointer" onMouseEnter={() => setHoverLeft(true)} onMouseLeave={() => setHoverLeft(false)}></a>
                 <a href="" className="absolute top-0 right-0 z-20 h-full w-[50%] cursor-pointer" onMouseEnter={() => setHoverRight(true)} onMouseLeave={() => setHoverRight(false)}></a>
                 <div className="z-10 flex h-full w-[70rem] flex-col gap-[6.4rem] text-[1.6rem] font-medium text-white">
@@ -38,7 +38,7 @@ export default function QuestSection() {
                             </svg>
                         </div>
                     </div>
-                    <div className="text-foreground mt-[6.4rem] text-[1.8rem]">
+                    <div className="text-foreground mt-[6.4rem] flex justify-center text-[1.8rem]">
                         <svg data-v-21d492e8="" viewBox="0 0 15 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="mr-[1.5rem] inline-block h-[2rem] w-[1.5rem]">
                             <rect x="5.00006" y="3.00037" width="5" height="9" fill="#E81C5A"></rect>
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.49999 0.000366215C10.0524 0.000309234 11.5444 0.601932 12.6625 1.67883C13.7806 2.75573 14.4378 4.22408 14.496 5.77537L14.5 6.00037V14.0004C14.5 15.5527 13.8984 17.0447 12.8215 18.1628C11.7446 19.2809 10.2763 19.9382 8.72499 19.9964L8.49999 20.0004H6.49999C4.94762 20.0004 3.45564 19.3988 2.33753 18.3219C1.21942 17.245 0.562214 15.7767 0.504 14.2254L0.5 14.0004V6.00037C0.499943 4.44799 1.10157 2.95601 2.17846 1.83789C3.25536 0.719783 4.72371 0.0625804 6.27499 0.00436616L6.49999 0.000366215H8.49999ZM7.49999 4.00037C7.23478 4.00037 6.98042 4.10572 6.79289 4.29326C6.60535 4.4808 6.49999 4.73515 6.49999 5.00037V9.00037C6.49999 9.26558 6.60535 9.51994 6.79289 9.70747C6.98042 9.89501 7.23478 10.0004 7.49999 10.0004C7.76521 10.0004 8.01956 9.89501 8.2071 9.70747C8.39464 9.51994 8.49999 9.26558 8.49999 9.00037V5.00037C8.49999 4.73515 8.39464 4.4808 8.2071 4.29326C8.01956 4.10572 7.76521 4.00037 7.49999 4.00037Z" fill="url(#paint0_linear_27_4686)"></path>
