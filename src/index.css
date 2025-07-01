@@ -1,4 +1,7 @@
-@import "tailwindcss";
+@layer theme, base, components, utilities;
+@import "tailwindcss/theme.css" layer(theme);
+@import "tailwindcss/preflight.css" layer(base);
+@import "tailwindcss/utilities.css" layer(utilities);
 @import "@fontsource/roboto/100.css";
 @import "@fontsource/roboto/200.css";
 @import "@fontsource/roboto/300.css";
@@ -30,8 +33,12 @@
     }
 
     html {
+        @apply overflow-scroll scroll-smooth text-[62.5%];
+    }
+
+    body {
         font-family: "Roboto", sans-serif;
-        @apply bg-background text-foreground overflow-scroll scroll-smooth text-[62.5%] leading-[1.6rem];
+        @apply bg-background text-foreground leading-[1.6rem];
     }
 
     ::selection {
